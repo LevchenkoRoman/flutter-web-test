@@ -50,8 +50,8 @@ jobs:
           file: ./Dockerfile
           context: .
           push: true
-          tags: ghcr.io/${{ github.repository }}/flutter_web:latest
-          image: ghcr.io/r.levchenko@itransition.com/flutter_web:latest
+          tags: ghcr.io/levchenko_roman/flutter_web:latest
+          image: ghcr.io/levchenko_roman/flutter_web:latest
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
