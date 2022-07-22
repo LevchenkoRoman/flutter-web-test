@@ -55,8 +55,8 @@ jobs:
           tags: ghcr.io/levchenko_roman/flutter_web:latest
           image: ghcr.io/levchenko_roman/flutter_web:latest
           registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.custom_token }}
 
 #      -
 #        name: Login to GitHub Container Registry
