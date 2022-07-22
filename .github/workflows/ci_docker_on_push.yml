@@ -47,7 +47,7 @@ jobs:
       - name: Build and push
         uses: elgohr/Publish-Docker-Github-Action@v4
         with:
-          name: myDocker/repository/flutter_web
+          name: ${{ github.repository_owner }}/flutter_web:latest
           username: ${{ github.repository_owner }}
           password: ${{ secrets.custom_token }}
           registry: ghcr.io
