@@ -46,6 +46,11 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
+          image: ghcr.io/r.levchenko@itransition.com/flutter_web:latest
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
           push: true
           tags: user/app:latest
 
