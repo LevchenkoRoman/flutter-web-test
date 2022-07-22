@@ -45,12 +45,13 @@ jobs:
           password: ${{ secrets.custom_token }}
 
       - name: Build and push
-        uses: elgohr/Publish-Docker-Github-Action@v4
+        uses: docker/build-push-action@v3
         with:
-          name: ${{ github.repository_owner }}/flutter_web:latest
+          push: true
+          image: ${{ github.repository_owner }}/flutter_web:latest
+          registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.custom_token }}
-          registry: ghcr.io
 
 #      -
 #        name: Login to GitHub Container Registry
