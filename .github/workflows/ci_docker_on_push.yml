@@ -41,18 +41,20 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
-          username: ${{ github.repository_owner }}
+          username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
+          file: ./Dockerfile
+          context: .
+          push: true
+          tags: ghcr.io/${{ github.repository }}/flutter_web:latest
           image: ghcr.io/r.levchenko@itransition.com/flutter_web:latest
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
-          push: true
-          tags: user/app:latest
 
 #      -
 #        name: Login to GitHub Container Registry
