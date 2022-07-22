@@ -1,0 +1,16 @@
+name: merge Staging PR
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+jobs:
+  buildServer:
+    timeout-minutes: 10
+    name: check build Server
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+      - uses: actions/checkout@v1
+      - uses: subosito/flutter-action@v1
+      - run: dart pub get
+      - run: flutter build web
