@@ -47,7 +47,7 @@ jobs:
         with:
           push: true
           image: ${{ github.repository_owner }}/flutter_web:latest
-          tags: latest
+          tags:  ${{ github.repository_owner }}/flutter_web:latest
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
