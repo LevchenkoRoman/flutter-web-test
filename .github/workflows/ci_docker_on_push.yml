@@ -46,8 +46,8 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          image: levchenkoroman/flutter_web:latest
-          tags:  levchenkoroman/flutter_web:latest
+          image: ghcr.io/levchenkoroman/flutter_web:latest
+          tags:  ghcr.io/levchenkoroman/flutter_web:latest
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
