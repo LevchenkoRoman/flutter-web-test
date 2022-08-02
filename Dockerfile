@@ -1,13 +1,6 @@
 #Stage 1 - Install dependencies and build the app
 FROM cirrusci/flutter:stable AS build-env
 
-# Run flutter doctor
-RUN flutter doctor -v
-## Enable flutter web
-#RUN flutter channel stable
-#RUN flutter upgrade
-#RUN flutter config --enable-web
-
 # Copy files to container and build
 RUN mkdir /app/
 COPY . /app/
@@ -16,5 +9,5 @@ RUN flutter pub get
 RUN flutter build web --release
 
 # Stage 2 - Create the run-time image
-FROM nginx:1.21.1-alpine
+FROM nginx:latest
 COPY --from=build-env /app/build/web /usr/share/nginx/html
